@@ -1,0 +1,301 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAIF CREATOR</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f14;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 18px 20px;
+            background: #111820;
+            border-bottom: 1px solid #28323d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffd21c;
+        }
+
+        .online {
+            font-size: 13px;
+            color: #72e6a2;
+        }
+
+        .hero {
+            max-width: 650px;
+            margin: auto;
+            padding: 55px 20px 30px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1b2430;
+            color: #ffd21c;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #ffd21c;
+        }
+
+        .hero p {
+            color: #aeb7c2;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 22px;
+            background: #111820;
+            border: 1px solid #28323d;
+            border-radius: 18px;
+        }
+
+        .video-box {
+            height: 220px;
+            border-radius: 14px;
+            background: linear-gradient(
+                135deg,
+                #1c222b,
+                #080b0f
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .play {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 25px;
+        }
+
+        .video-box h2 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .video-box p {
+            color: #9da7b2;
+            font-size: 13px;
+        }
+
+        .watch {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+            padding: 15px;
+            background: #ff0000;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .watch:active {
+            transform: scale(.98);
+        }
+
+        .info-title {
+            color: #ffd21c;
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .info {
+            color: #b5bec8;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .stat {
+            background: #0b0f14;
+            border: 1px solid #28323d;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .stat small {
+            color: #89939e;
+        }
+
+        .stat strong {
+            display: block;
+            margin-top: 6px;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #68737e;
+            font-size: 12px;
+        }
+
+        @media (max-width: 450px) {
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .video-box {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">SAIF CREATOR</div>
+        <div class="online">● Online</div>
+    </header>
+
+
+    <section class="hero">
+
+        <div class="badge">
+            AI • Islamic • Cinematic
+        </div>
+
+        <h1>
+            Welcome to <span>SAIF CREATOR</span>
+        </h1>
+
+        <p>
+            Watch my latest cinematic video
+            and explore more content on YouTube.
+        </p>
+
+    </section>
+
+
+    <div class="card">
+
+        <div class="video-box">
+
+            <div>
+
+                <div class="play">
+                    ▶
+                </div>
+
+                <h2>
+                    Latest YouTube Short
+                </h2>
+
+                <p>
+                    Click below to watch the video
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            class="watch"
+            href="https://youtube.com/shorts/LlZYTtTfpG4?si=uT4C-hZM6SZJMSE8"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            ▶ WATCH ON YOUTUBE
+
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="info-title">
+            About SAIF CREATOR
+        </div>
+
+        <div class="info">
+
+            AI-generated cinematic videos,
+            Islamic content and historical
+            visual stories.
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <small>Content</small>
+
+                <strong>AI Videos</strong>
+
+            </div>
+
+            <div class="stat">
+
+                <small>Platform</small>
+
+                <strong>YouTube</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        © 2026 SAIF CREATOR
+
+    </footer>
+
+
+</body>
+</html>          
