@@ -1,287 +1,556 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAIF CREATOR | Islamic AI Videos</title>
 
-    <title>SAIF CREATOR</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:#080b12;
+    color:white;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0f14;
-            color: #fff;
-            min-height: 100vh;
-        }
+header{
+    background:linear-gradient(135deg,#111827,#080b12);
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #263044;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
 
-        .header {
-            padding: 18px 20px;
-            background: #111820;
-            border-bottom: 1px solid #28323d;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.logo{
+    font-size:27px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffd21c;
-        }
+.logo span{
+    color:#ff1744;
+}
 
-        .online {
-            font-size: 13px;
-            color: #72e6a2;
-        }
+.tagline{
+    color:#aeb7c7;
+    font-size:13px;
+    margin-top:6px;
+}
 
-        .hero {
-            max-width: 650px;
-            margin: auto;
-            padding: 55px 20px 30px;
-            text-align: center;
-        }
+.hero{
+    text-align:center;
+    padding:55px 20px 35px;
+    background:radial-gradient(circle at top,#182338,#080b12 65%);
+}
 
-        .badge {
-            display: inline-block;
-            background: #1b2430;
-            color: #ffd21c;
-            padding: 7px 14px;
-            border-radius: 30px;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
+.badge{
+    display:inline-block;
+    background:#151d2c;
+    border:1px solid #334155;
+    padding:8px 15px;
+    border-radius:30px;
+    color:#60a5fa;
+    font-size:12px;
+    margin-bottom:18px;
+}
 
-        .hero h1 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
 
-        .hero h1 span {
-            color: #ffd21c;
-        }
+.hero h1 span{
+    color:#ff1744;
+}
 
-        .hero p {
-            color: #aeb7c2;
-            line-height: 1.7;
-            font-size: 15px;
-        }
+.hero p{
+    color:#aeb7c7;
+    max-width:600px;
+    margin:auto;
+    line-height:1.6;
+}
 
-        .card {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 22px;
-            background: #111820;
-            border: 1px solid #28323d;
-            border-radius: 18px;
-        }
+.youtube-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 25px;
+    background:#ff1744;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 8px 25px rgba(255,23,68,.25);
+}
 
-        .video-box {
-            height: 220px;
-            border-radius: 14px;
-            background: linear-gradient(
-                135deg,
-                #1c222b,
-                #080b0f
-            );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
+.youtube-btn:hover{
+    background:#e50935;
+}
 
-        .play {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: #ff0000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 14px;
-            font-size: 25px;
-        }
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:35px 15px;
+}
 
-        .video-box h2 {
-            font-size: 20px;
-            margin-bottom: 7px;
-        }
+.section-title{
+    text-align:center;
+    font-size:25px;
+    margin-bottom:25px;
+}
 
-        .video-box p {
-            color: #9da7b2;
-            font-size: 13px;
-        }
+.section-title span{
+    color:#ff1744;
+}
 
-        .watch {
-            display: block;
-            width: 100%;
-            margin-top: 18px;
-            padding: 15px;
-            background: #ff0000;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
+.videos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
 
-        .watch:active {
-            transform: scale(.98);
-        }
+.video-card{
+    background:#111827;
+    border:1px solid #263044;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+}
 
-        .info-title {
-            color: #ffd21c;
-            margin-bottom: 12px;
-            font-size: 19px;
-        }
+.video-card:hover{
+    transform:translateY(-5px);
+    border-color:#ff1744;
+}
 
-        .info {
-            color: #b5bec8;
-            line-height: 1.7;
-            font-size: 14px;
-        }
+.video-box{
+    position:relative;
+    width:100%;
+    aspect-ratio:9/16;
+    background:#000;
+}
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 15px;
-        }
+.video-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
 
-        .stat {
-            background: #0b0f14;
-            border: 1px solid #28323d;
-            padding: 15px;
-            border-radius: 12px;
-        }
+.video-info{
+    padding:15px;
+}
 
-        .stat small {
-            color: #89939e;
-        }
+.video-info h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
 
-        .stat strong {
-            display: block;
-            margin-top: 6px;
-            color: #fff;
-        }
+.watch{
+    display:block;
+    text-align:center;
+    background:#ff1744;
+    color:white;
+    padding:11px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #68737e;
-            font-size: 12px;
-        }
+.about{
+    background:#0e1420;
+    border-top:1px solid #202a3b;
+    border-bottom:1px solid #202a3b;
+}
 
-        @media (max-width: 450px) {
-            .hero h1 {
-                font-size: 31px;
-            }
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
 
-            .video-box {
-                height: 200px;
-            }
-        }
-    </style>
+.about-box p{
+    color:#b7c0ce;
+    line-height:1.8;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.stat{
+    background:#111827;
+    border:1px solid #263044;
+    padding:18px 25px;
+    border-radius:14px;
+    min-width:130px;
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+    color:#ff1744;
+}
+
+.stat small{
+    color:#9ca8ba;
+}
+
+footer{
+    text-align:center;
+    padding:30px 15px;
+    color:#8994a7;
+    font-size:13px;
+}
+
+footer strong{
+    color:white;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:29px;
+    }
+
+    .videos{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .video-info{
+        padding:10px;
+    }
+
+    .video-info h3{
+        font-size:13px;
+    }
+
+    .watch{
+        font-size:12px;
+        padding:9px;
+    }
+}
+
+@media(max-width:380px){
+    .videos{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="logo">SAIF CREATOR</div>
-        <div class="online">● Online</div>
-    </header>
+<header>
+    <div class="logo">SAIF <span>CREATOR</span></div>
+    <div class="tagline">AI • Islamic • Cinematic Videos</div>
+</header>
+
+<section class="hero">
+
+    <div class="badge">✨ WELCOME TO MY OFFICIAL WEBSITE</div>
+
+    <h1>Welcome to <span>SAIF CREATOR</span></h1>
+
+    <p>
+        Watch my latest AI-generated Islamic and cinematic videos.
+        New videos are added regularly.
+    </p>
+
+    <a class="youtube-btn"
+       href="https://youtube.com/shorts/LlZYTtTfpG4?si=uT4C-hZM6SZJMSE8"
+       target="_blank">
+       🔴 WATCH ON YOUTUBE
+    </a>
+
+</section>
 
 
-    <section class="hero">
+<section class="section">
 
-        <div class="badge">
-            AI • Islamic • Cinematic
+    <h2 class="section-title">
+        🎬 Latest <span>Videos</span>
+    </h2>
+
+    <div class="videos">
+
+
+        <!-- VIDEO 1 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/j3pQLcPxVZI"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #1</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/j3pQLcPxVZI?si=FiL104iOTcTcCmA8"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
         </div>
 
-        <h1>
-            Welcome to <span>SAIF CREATOR</span>
-        </h1>
 
-        <p>
-            Watch my latest cinematic video
-            and explore more content on YouTube.
-        </p>
+        <!-- VIDEO 2 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/SoQuPnhiXlE"
+                allowfullscreen>
+                </iframe>
+            </div>
 
-    </section>
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #2</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/SoQuPnhiXlE?si=pTy-Wl5vyr9pmC-s"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
 
 
-    <div class="card">
+        <!-- VIDEO 3 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/GPJ3lrPxyfA"
+                allowfullscreen>
+                </iframe>
+            </div>
 
-        <div class="video-box">
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #3</h3>
 
-            <div>
+                <a class="watch"
+                href="https://youtube.com/shorts/GPJ3lrPxyfA?si=gXiKSHbRzi6VaiX5"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
 
-                <div class="play">
-                    ▶
+
+        <!-- VIDEO 4 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/7ZppvJVXTaU"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #4</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/7ZppvJVXTaU?si=rB1FOA4780QaGFDb"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 5 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/Ab2rF9t_asg"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #5</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/Ab2rF9t_asg?si=CQXPt5cItnwP1VS2"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 6 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/-fFepyM5hgw"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #6</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/-fFepyM5hgw?si=Jck8-wEImbFvBOVp"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 7 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/4NYjFHPwCUc"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #7</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/4NYjFHPwCUc?si=P-dLBQgif4LduW8N"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 8 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/G_pIL1dIsIw"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #8</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/G_pIL1dIsIw?si=IIP1gAPYeHKqvpGg"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 9 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/dnXwxDSa6d8"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #9</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/dnXwxDSa6d8?si=MdcupieHVVvWY669"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 10 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/_ZMM6z5dxHw"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #10</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/_ZMM6z5dxHw?si=pP3FI4FLTFS9rc1c"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+
+        <!-- VIDEO 11 -->
+        <div class="video-card">
+            <div class="video-box">
+                <iframe
+                src="https://www.youtube.com/embed/vJm-JZBbsZg"
+                allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-info">
+                <h3>SAIF CREATOR Video #11</h3>
+
+                <a class="watch"
+                href="https://youtube.com/shorts/vJm-JZBbsZg?si=z85BiHicob-zUK7B"
+                target="_blank">
+                ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <div class="section">
+
+        <div class="about-box">
+
+            <h2 class="section-title">
+                About <span>SAIF CREATOR</span>
+            </h2>
+
+            <p>
+                SAIF CREATOR پر AI، اسلامی اور cinematic
+                ویڈیوز پیش کی جاتی ہیں۔ میرا مقصد خوبصورت،
+                تخلیقی اور روحانی ویڈیوز آپ تک پہنچانا ہے۔
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>11+</strong>
+                    <small>Videos</small>
                 </div>
 
-                <h2>
-                    Latest YouTube Short
-                </h2>
+                <div class="stat">
+                    <strong>AI</strong>
+                    <small>Creative Content</small>
+                </div>
 
-                <p>
-                    Click below to watch the video
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <a
-            class="watch"
-            href="https://youtube.com/shorts/LlZYTtTfpG4?si=uT4C-hZM6SZJMSE8"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            ▶ WATCH ON YOUTUBE
-
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <div class="info-title">
-            About SAIF CREATOR
-        </div>
-
-        <div class="info">
-
-            AI-generated cinematic videos,
-            Islamic content and historical
-            visual stories.
-
-        </div>
-
-        <div class="stats">
-
-            <div class="stat">
-
-                <small>Content</small>
-
-                <strong>AI Videos</strong>
-
-            </div>
-
-            <div class="stat">
-
-                <small>Platform</small>
-
-                <strong>YouTube</strong>
+                <div class="stat">
+                    <strong>YT</strong>
+                    <small>YouTube</small>
+                </div>
 
             </div>
 
@@ -289,13 +558,18 @@
 
     </div>
 
+</section>
 
-    <footer>
 
-        © 2026 SAIF CREATOR
+<footer>
 
-    </footer>
+    © 2026 <strong>SAIF CREATOR</strong>
 
+    <br><br>
+
+    Made with ❤️ for Islamic & Cinematic Content
+
+</footer>
 
 </body>
-</html>          
+ </html>
